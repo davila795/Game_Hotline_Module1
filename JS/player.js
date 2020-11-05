@@ -16,7 +16,7 @@ class Player {
 
         //IMAGEN
         this.image = new Image()
-        this.image.src = 'img/40x40'
+        this.image.src = 'img/40x40.png'
         this.image.frames = 4
         this.image.framesIndex = 0
 
@@ -49,20 +49,12 @@ class Player {
 
         this.ctx.drawImage(
             this.image,
-            // this.image.framesIndex * Math.floor(this.image.width / this.image.frames), 0,
-            // Math.floor(this.image.width / this.image.frames),
-            // this.image.height,
-            // this.posX,
-            // this.posY,
             -this.width / 2,
             -this.height / 2,
 
         )
 
         this.ctx.restore()
-        // this.animate(framesCounter)
-
-
         this.bullets.forEach(bullet => bullet.draw())
         this.clearBullets()
         this.move()
@@ -79,16 +71,6 @@ class Player {
         }
     }
 
-
-    // draw() {
-
-    //     this.ctx.fillStyle = 'skyblue'
-    //     this.ctx.fillRect(this.posX, this.posY, this.width, this.height)
-    //     this.move()
-
-    //     this.bullets.forEach(bullet => { bullet.draw() })
-    //     this.clearBullets()
-    // }
 
     move() {
 

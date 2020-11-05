@@ -35,6 +35,7 @@ class Bullets {
         )
         this.ctx.restore()
         this.audio.play()
+        this.audio.volume = 0.5
 
         this.move()
     }

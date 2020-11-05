@@ -21,11 +21,6 @@ class Background {
         this.ctx.fillStyle = 'black'
         this.ctx.fillRect(0, 0, this.gameWidth , this.gameHeight)
 
-
-        // this.ctx.fillStyle = 'gray'
-        // this.ctx.fillRect(this.posX, this.posY, this.width, this.height)
-
-
         this.ctx.drawImage(
             this.image,
             this.posX,

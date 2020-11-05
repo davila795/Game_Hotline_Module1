@@ -61,15 +61,11 @@ class EnemyBasic extends Enemy {
 
         this.image.frames = srcSelector == 0 ? 10 : 9
         this.image.framesIndex = 0
-        this.init()
-        console.log(this.imgSrcArray)
+
 
     }
 
-    // init() {
-    //     console.log(this.imgSrcArray)
-    //     this.image.src == this.imgSrcArray[0]? this.image.frames = 10 : this.image.frames = 9
-    // }
+
 
 
     //  IMAGEN Y ANIMACION
@@ -111,12 +107,11 @@ class EnemyShooter extends Enemy {
         // this.framesCounter = framesCounter
         this.bullets = []
         this.aimAngle = undefined
-
-        //IMAGEN
         this.image = new Image()
-        this.image.src = 'img/enemytest'
-        // this.image.frames = 4
-        // this.image.framesIndex = 0
+        this.imgSrcArray = ['img/duales.png', 'img/enemytest.png']
+        let srcSelector = Math.floor(Math.random() * 2)
+        this.image.src = this.imgSrcArray[srcSelector]
+
 
 
     }
@@ -131,42 +126,19 @@ class EnemyShooter extends Enemy {
         this.ctx.rotate(this.aimAngle * Math.PI / 180)
         this.ctx.drawImage(
             this.image,
-            // this.image.framesIndex * Math.floor(this.image.width / this.image.frames), 0,
-            // Math.floor(this.image.width / this.image.frames),
-            // this.image.height,
-            // this.posX,
-            // this.posY,
             -this.width / 2,
             -this.height / 2,
         )
         this.ctx.restore()
         this.move()
         this.shoot()
-        // this.animate(framesCounter)
+
         this.bullets.forEach(bullet => {
             bullet.draw()
         })
         this.clearBullets()
     }
 
-
-    // animate(framesCounter) {
-    //     if (framesCounter % 5 === 0) {
-    //         this.image.framesIndex++;
-    //     }
-    //     if (this.image.framesIndex > this.image.frames - 1) {
-    //         this.image.framesIndex = 0;
-    //     }
-    // }
-
-    // draw() {
-    //     this.ctx.fillStyle = 'black'
-    //     this.ctx.fillRect(this.posX, this.posY, this.width, this.height)
-    //     this.move()
-    //     this.shoot()
-    //     this.bullets.forEach(bullet => { bullet.draw() })
-    //     this.clearBullets()
-    // }
 
     shoot() {
 
