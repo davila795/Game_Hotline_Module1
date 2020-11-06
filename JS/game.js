@@ -48,8 +48,8 @@ const Game = {
     setDimension() {
         this.backgroundW = 1600
         this.backgroundH = 900
-        this.canvas.width = window.innerWidth
-        this.canvas.height = window.innerHeight
+        this.canvas.width = window.innerWidth - 10
+        this.canvas.height = window.innerHeight - 10
         this.backgroundX = this.canvas.width / 2 - this.backgroundW / 2
         this.backgroundY = this.canvas.height / 2 - this.backgroundH / 2
     },
