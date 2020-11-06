@@ -16,7 +16,7 @@ class Player {
 
         //IMAGEN
         this.image = new Image()
-        this.image.src = 'img/40x40.png'
+        this.image.src = 'img/player/player.png'
         this.image.frames = 4
         this.image.framesIndex = 0
 
@@ -124,7 +124,7 @@ class Player {
 
 
     shoot() {
-        let bala = new Bullets(this.ctx, this.posX, this.posY, this.aimAngle, this.width, this.height, 15, 'img/splBullet_0 (2).png')
+        let bala = new Bullets(this.ctx, this.posX, this.posY, this.aimAngle, this.width, this.height, 10, 'img/items/bullet1.png')
 
         this.bullets.push(bala)
 
@@ -133,7 +133,7 @@ class Player {
     threeSixtyAttack() {
         let threeSixtyAngle = 0
         while (threeSixtyAngle < 360) {
-            this.bullets.push(new Bullets(this.ctx, this.posX, this.posY, threeSixtyAngle, this.width, this.height, 12, 'img/splBullet_0.png'))
+            this.bullets.push(new Bullets(this.ctx, this.posX, this.posY, threeSixtyAngle, this.width, this.height, 10, 'img/items/bullet1.png'))
             threeSixtyAngle += 7
         }
     }

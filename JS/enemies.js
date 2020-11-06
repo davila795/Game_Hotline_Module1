@@ -55,11 +55,11 @@ class EnemyBasic extends Enemy {
         super(ctx, backgroundW, backgroundH, backgroundX, backgroundY, enemyWidth, enemyHeight, enemySpeed, playerX, playerY, hp)
         //IMAGEN
         this.image = new Image()
-        this.imgSrcArray = ['img/sprBoss2Dodge_strip10.png', 'img/Screenshot from 2020-10-28 19-32-36.png']
+        this.imgSrcArray = ['img/enemies/basicEnemy1.png', 'img/enemies/basicEnemy2.png']
         let srcSelector = Math.floor(Math.random() * 2)
         this.image.src = this.imgSrcArray[srcSelector]
 
-        this.image.frames = srcSelector == 0 ? 10 : 9
+        this.image.frames = srcSelector == 0 ? 10 : 8
         this.image.framesIndex = 0
 
 
@@ -108,7 +108,7 @@ class EnemyShooter extends Enemy {
         this.bullets = []
         this.aimAngle = undefined
         this.image = new Image()
-        this.imgSrcArray = ['img/duales.png', 'img/enemytest.png']
+        this.imgSrcArray = ['img/enemies/shooterEnemy1.png', 'img/enemies/shooterEnemy2.png']
         let srcSelector = Math.floor(Math.random() * 2)
         this.image.src = this.imgSrcArray[srcSelector]
 
@@ -144,7 +144,7 @@ class EnemyShooter extends Enemy {
 
         this.aim()
         if (this.framesCounter % 100 === 0) {
-            this.bullets.push(new Bullets(this.ctx, this.posX, this.posY, this.aimAngle, this.width, this.height, 8, 'img/clash2 (2).png'))
+            this.bullets.push(new Bullets(this.ctx, this.posX, this.posY, this.aimAngle, this.width, this.height, 8, 'img/items/enemyBullet1.png'))
         }
 
     }

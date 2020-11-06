@@ -1,4 +1,10 @@
 const Game = {
+    name: 'Hotline Legazpi',
+    description: 'Project 1 - Module 1: Recreation of the videogame Hotline Miami',
+    version: '1.0.0 - PreAlpha',
+    license: undefined,
+    authors: 'Carlos García & Carlos Dávila',
+
     canvas: undefined,
     ctx: undefined,
     width: undefined,
@@ -16,8 +22,9 @@ const Game = {
         right: 'd',
         space: ' '
     },
+
     audioTheme: new Audio('audio/GiorgiaAngiuli-PinkTechno.mp3'),
-    audioGameOver: new Audio('audio/audio muerte'),
+    audioGameOver: new Audio('audio/effects/deadPlayer.mp3'),
     status: 'main',
 
     init() {
@@ -25,13 +32,13 @@ const Game = {
         this.ctx = this.canvas.getContext('2d')
         this.setDimension()
         this.scoreImage = new Image()
-        this.scoreImage.src = 'img/caras5.png'
+        this.scoreImage.src = 'img/player/score.png'
         this.lifeImage = new Image()
-        this.lifeImage.src = 'img/caras vida.png'
+        this.lifeImage.src = 'img/player/health.png'
         this.imgGameover = new Image()
-        this.imgGameover.src = 'img/gameoverpixels.png'
+        this.imgGameover.src = 'img/backgrounds/gameOver.png'
         this.backgroundMenu = new Image()
-        this.backgroundMenu.src = 'img/mainmeupixels.png'
+        this.backgroundMenu.src = 'img/backgrounds/mainMenu.png'
 
         this.start()
 
@@ -134,12 +141,13 @@ const Game = {
     },
 
     drawLife() {
-        this.ctx.font = '24px Arial'
-        this.ctx.fillText('Hp: X ' + this.player.hp, this.background.posX + 35, this.background.posY + 45)
-        this.ctx.drawImage(this.lifeImage, this.background.posX + 105, this.background.posY + 5, 70, 70)
-        this.ctx.font = '24px Arial'
-        this.ctx.fillText('Kills: X ' + this.score, this.background.posX + 190, this.background.posY + 45)
-        this.ctx.drawImage(this.scoreImage, this.background.posX + 280, this.background.posY + 5, 70, 70)
+        this.ctx.font = '32px Arial'
+        this.ctx.fillStyle = '#ae0003'
+        this.ctx.fillText('Hp: X ' + this.player.hp, this.background.posX + 45, this.background.posY + 105)
+        this.ctx.drawImage(this.lifeImage, this.background.posX + 165, this.background.posY + 65, 50, 50)
+        this.ctx.font = '32px Arial'
+        this.ctx.fillText('Kills: X ' + this.score, this.background.posX + 228, this.background.posY + 105)
+        this.ctx.drawImage(this.scoreImage, this.background.posX + 395, this.background.posY + 68, 50, 50)
 
 
 

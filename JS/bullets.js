@@ -13,7 +13,7 @@ class Bullets {
         this.image = new Image()
         this.image.src = img
 
-        this.audio = new Audio('audio/effects/gunshot.wav')
+        this.audio = new Audio('audio/effects/gunshot.mp3')
 
         this.velX = Math.cos(this.bulletAngle / 180 * Math.PI) * bulletSpeed
         this.velY = Math.sin(this.bulletAngle / 180 * Math.PI) * bulletSpeed

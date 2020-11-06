@@ -12,14 +12,14 @@ class Background {
 
         //IMAGEN
         this.image = new Image()
-        this.image.src = 'img/background.png'
+        this.image.src = 'img/backgrounds/background.png'
     }
 
 
     draw() {
 
         this.ctx.fillStyle = 'black'
-        this.ctx.fillRect(0, 0, this.gameWidth , this.gameHeight)
+        this.ctx.fillRect(0, 0, this.gameWidth, this.gameHeight)
 
         this.ctx.drawImage(
             this.image,
