@@ -3,7 +3,7 @@ const Game = {
     description: 'Project 1 - Module 1: Recreation of the videogame Hotline Miami',
     version: '1.0.0 - PreAlpha',
     license: undefined,
-    authors: 'Carlos García & Carlos Dávila',
+    authors: 'Carlos Dávila & Carlos García',
 
     canvas: undefined,
     ctx: undefined,
